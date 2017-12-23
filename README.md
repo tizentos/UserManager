@@ -1,29 +1,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# User Manager
+# User Manager on VM
 
 This repository contains a simple demo API built with NodeJS.
-The API is used to manage users in a MongoDB database.
-
-### Development
-This application was developed using [ExpressJS](http://expressjs.com/). MongoDB was used for persisting data with [Mongoose](https://mongoosejs.com/) as [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).
+The API is used to manage users in a MongoDB database. This repository has been modified to run on a VM preferrably in a docker container.
 
 ### Installation
-* Start up your terminal (or Command Prompt on Windows OS).
-* Ensure that you've `node` installed on your PC.
-* Clone the repository by entering the command `git clone https://github.com/andela-bolajide/UserManager` in the terminal.
-* Navigate to the project folder using `cd UserManager` on your terminal (or command prompt)
-* After cloning, install the application's dependencies with the command `npm install`.
-* Create a `.env` file in your root directory as described in `.env.sample` file. Variables such as DB_URL (which must be a mongoDB URL) and PORT are defined in the .env file and it is essential you create this file before running the application.
-```
-PORT=3000
-DB_URL='mongodb://john:doe@localhost:27017/databaseName'
-```
-* After this, you can then start the server with the command: `npm start`.
+* Clone the repository
+* Download and Install Docker for your type of operating system at https://docs.docker.com/engine/installation
+* Open the Docker Quickstart terminal, it will automatically create a docker machine called "default"
+* In the terminal, navigate to the folder that housed the nodejs application; `../UserManager`
+* Run `docker-compose build` to build the nodejs applicaiton and the mongoDB containers.
+* Upon successful build, run the command `docker image ls`, the terminal will display the imagee for the nodejs app and mongoDB
+* To run the node js app, enter the command `docker run -p 49160:3000 -d usermanager_app` in the terminal.
+* To check if the mongo image is working , enter the command `docker run -p 49161:3000 -d mongo` in the terminal. If entered correctly, you will see `WAITING FOR CONNECTIONS ON PORT 27017`.
+* To run the two services simultaenously, type on the terminal, the command, `docker-compose up`. Then we have the two services running on a VM.
 
-### Testing
-To ensure that your installation is successful you'll need to run tests.
-The command: `npm test` makes this possible. It isn't functional right now, but once it's done you'll be notified via the README.
 
 ### API Documentation
 The API only has one endpoint which is the `/users` endpoint for saving users to the database. The endpoint works with the HTTP verbs: `POST`, `GET`, `PUT`, `DELETE`.
@@ -111,5 +103,8 @@ password: janedoe
 
 
 
-### Author
+### Original Author
 **Olajide Bolaji 'Nuel** - Software Developer at Andela
+
+### Modified by
+**Tosin Jemilehin**
