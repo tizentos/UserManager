@@ -11,9 +11,12 @@ The API is used to manage users in a MongoDB database. This repository has been 
 * Open the Docker Quickstart terminal, it will automatically create a docker machine called "default"
 * In the terminal, navigate to the folder that housed the nodejs application; `../UserManager`
 * Run `docker-compose build` to build the nodejs applicaiton and the mongoDB containers.
-* Upon successful build, run the command `docker image ls`, the terminal will display the imagee for the nodejs app and mongoDB
+* Upon successful build, run the command `docker image ls`, the terminal will display the images for the nodejs app and mongoDB
 * To run the node js app, enter the command `docker run -p 49160:3000 -d usermanager_app` in the terminal.
-* To check if the mongo image is working , enter the command `docker run -p 49161:3000 -d mongo` in the terminal. If entered correctly, you will see `WAITING FOR CONNECTIONS ON PORT 27017`.
+* To check if the mongo image is working , enter the command `docker run -p 49161:3000 -d mongo` in the terminal.
+* Enter the command `docker ps` to display information about the images. Take note of the container id.
+* To see the output of the nodejs application, enter the command `docker logs <usermanager_container_id>`. You should see `LISTENING TO PORT 3000`.
+* `docker logs mongo_container_id>`.If entered correctly, you will see `WAITING FOR CONNECTIONS ON PORT 27017`.
 * To run the two services simultaenously, type on the terminal, the command, `docker-compose up`. Then we have the two services running on a VM.
 
 
