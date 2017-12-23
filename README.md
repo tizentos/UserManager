@@ -9,6 +9,7 @@ It is expedient you create a .env file to run this application successfully. Ent
 
 
 `PORT=3000
+
  DB_URL='mongodb://localhost:27017/databaseName`
 
 ### Installation
