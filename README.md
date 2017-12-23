@@ -6,6 +6,8 @@ This repository contains a simple demo API built with NodeJS.
 The API is used to manage users in a MongoDB database. This repository has been modified to run on a VM preferrably in a docker container.
 
 It is expedient you create a .env file to run this application successfully. Enter the content below in your env file.
+
+
 `PORT=3000
  DB_URL='mongodb://localhost:27017/databaseName`
 
